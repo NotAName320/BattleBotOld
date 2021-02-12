@@ -157,7 +157,7 @@ class Bot(discord.Client):
                     attnumber = await self.wait_for('message', check=is_num_off, timeout=43200)
                 except asyncio.TimeoutError:
                     await attack.send('12 hours have passed and no response. Battle is an auto defeat!')
-                    embed.add_field(name='Defensive Number', value=defnumber, inline=True)
+                    embed.add_field(name='Defensive Number', value=defnumber.content, inline=True)
                     embed.add_field(name='Attacking Number', value='*None*', inline=True)
                     embed.add_field(name='Difference', value='Defenders auto-win', inline=True)
                     await logChannel.send(embed=embed)
@@ -227,7 +227,7 @@ class Bot(discord.Client):
                 attnumber = await self.wait_for('message', check=is_num_off, timeout=43200)
             except asyncio.TimeoutError:
                 await attack.send('12 hours have passed and no response. Battle is an auto defeat!')
-                embed.add_field(name='Defensive Number', value=defnumber, inline=True)
+                embed.add_field(name='Defensive Number', value=defnumber.content, inline=True)
                 embed.add_field(name='Attacking Number', value='*None*', inline=True)
                 embed.add_field(name='Difference', value='Defenders auto-win', inline=True)
                 await logChannel.send(embed=embed)
