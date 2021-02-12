@@ -10,10 +10,6 @@ token = f.read()
 f.close()
 
 
-def return_full_name(user):
-    return f'{user.name}#{user.discriminator}'
-
-
 def hasRole(user, roleName):
     for role in user.roles:
         if role.name == roleName:
