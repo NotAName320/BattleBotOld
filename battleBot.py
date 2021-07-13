@@ -5,11 +5,10 @@ import asyncio
 intents = discord.Intents.default()
 intents.members = True
 r.seed(a=None)
-f = open('token.txt')
-token = f.read()
-f.close()
+with f as open('token.txt'):
+    token = f.read()
 
-
+ 
 def hasRole(user, roleName):
     for role in user.roles:
         if role.name == roleName:
